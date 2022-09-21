@@ -1,0 +1,38 @@
+.around {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.movie-image {
+	width: 275px;
+	height: 400px;
+	border-radius: 5px;
+}
+
+.movie-info-box {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	width: 275px;
+	padding-top: 100px;
+	padding-bottom: 20px;
+	align-items: center;
+	background: linear-gradient(to top, black, rgba(0, 0, 0, 0.7), transparent);
+	opacity: 0;
+	color: rgb(240, 241, 255);
+	bottom: 0;
+	transition: opacity 0.3s ease-in-out;
+	border-radius: 5px;
+}
+
+.around:hover > .movie-info-box {
+	opacity: 0.8;
+}
+
+.movie-title {
+	text-align: center;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
