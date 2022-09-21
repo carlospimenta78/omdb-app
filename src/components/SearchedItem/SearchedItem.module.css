@@ -3,6 +3,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	width: 275px;
 }
 
 .movie-image {
@@ -35,4 +36,16 @@
 	text-align: center;
 	font-size: 20px;
 	margin-bottom: 10px;
+}
+
+.star-box {
+	position: absolute;
+	top: 20px;
+	right: 10px;
+	z-index: 1;
+	cursor: pointer;
+}
+
+.star-icon {
+	width: 30px;
 }

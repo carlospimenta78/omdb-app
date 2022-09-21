@@ -5,28 +5,43 @@ import styles from './SearchBox.module.css';
 
 const optionList = ['Movie', 'Series', 'Episode'];
 
+const getInitialList = () => {
+	try {
+		return JSON.parse(localStorage.getItem('list'));
+	} catch {
+		return [];
+	}
+};
+
 function SearchBox() {
 	const [name, setName] = useState('');
-
 	const [year, setYear] = useState('');
-
 	const [type, setType] = useState('');
+
+	const [list, setList] = useState(getInitialList());
 
 	const [results, setResults] = useState(null);
 	const [error, setError] = useState(null);
+
+	const updateList = newlist => {
+		localStorage.setItem('list', JSON.stringify(newlist));
+		setList(newlist);
+	};
+
+	const addRemoveList = id => {
+		if (list.includes(id)) {
+			updateList(list.filter(e => e !== id));
+		} else updateList([...list, id]);
+	};
 
 	const searchItems = async e => {
 		e.preventDefault();
 
 		let link = `https://www.omdbapi.com/?apikey=643a38c5&s=${name}`;
 
-		if (!!type) {
-			link += `&type=${type}`;
-		}
+		if (!!type) link += `&type=${type}`;
 
-		if (!!year) {
-			link += `&y=${year}`;
-		}
+		if (!!year) link += `&y=${year}`;
 
 		const res = await fetch(link);
 
@@ -93,10 +108,13 @@ function SearchBox() {
 						.map(e => (
 							<SearchedItem
 								key={e.imdbID}
+								id={e.imdbID}
 								title={e.Title}
 								image={e.Poster}
 								type={e.Type}
 								year={e.Year}
+								isFav={list.includes(e.imdbID)}
+								addRemoveList={addRemoveList}
 							/>
 						))}
 				{!!error && <div>{error}</div>}
