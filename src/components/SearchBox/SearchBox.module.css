@@ -1,3 +1,15 @@
+.header {
+	height: 80px;
+	width: 100vw;
+	display: flex;
+	align-items: center;
+	background: #313030;
+}
+
+.logo {
+	height: 80px;
+}
+
 .around-items {
 	width: 100%;
 	margin-top: 20px;
@@ -5,4 +17,52 @@
 	grid-row-gap: 40px;
 	grid-template-columns: repeat(auto-fill, 300px);
 	justify-content: space-around;
+}
+
+.form-box {
+	display: flex;
+	align-items: center;
+}
+
+.name-around,
+.year-around {
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	border-radius: 20px;
+	height: 20px;
+	background: white;
+	width: 120px;
+}
+
+.name-icon,
+.year-icon {
+	background: white;
+	width: 20px;
+	height: 100%;
+}
+
+.name-input,
+.year-input {
+	/*WIDTH = TAMANHO DO FIELDSET - WIDTH DO ICON DIV - 2 * O PADDING (5PX DE CADA LADO)*/
+	width: calc(100% - 20px - 5px * 2);
+	border: none;
+	appearance: none;
+	outline: none;
+	display: inline-block;
+	height: 100%;
+	padding: 0px 5px;
+	margin: 0;
+}
+
+.type-around {
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	border-radius: 20px;
+	height: 20px;
+	background: white;
+	width: 120px;
+	border: none;
+	padding: 0px 5px;
 }

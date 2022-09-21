@@ -44,33 +44,7 @@ fieldset {
 	margin: 0;
 }
 
-input[type='text'],
-input[type='tel'],
-input[type='email'],
-input[type='number'],
-input[type='password'],
 button {
-	border: none;
-	appearance: none;
-	outline: none;
-	display: inline-block;
-}
-
-input[type='date'],
-input[type='time'] {
-	border: none;
-	outline: none;
-}
-
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
-	appearance: none;
-	-moz-appearance: none;
-	-webkit-appearance: none;
-	margin: 0;
-}
-
-textarea {
 	border: none;
 	appearance: none;
 	outline: none;
