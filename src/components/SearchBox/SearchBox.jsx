@@ -7,7 +7,7 @@ const optionList = ['Movie', 'Series', 'Episode'];
 
 const getInitialList = () => {
 	try {
-		return JSON.parse(localStorage.getItem('list'));
+		return JSON.parse(localStorage.getItem('list')) || [];
 	} catch {
 		return [];
 	}
